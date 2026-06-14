@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Commentaires</title>
+
+<style>
+body{
+    background:#f8f8f8;
+    font-family:Arial,sans-serif;
+    padding:30px;
+}
+
+.container{
+    width:80%;
+    margin:auto;
+}
+
+h1{
+    text-align:center;
+    color:#28a745;
+}
+
+.comment{
+    background:white;
+    padding:15px;
+    margin-top:15px;
+    border-left:5px solid #28a745;
+    border-radius:8px;
+    box-shadow:0 0 10px gray;
+}
+
+.author{
+    font-weight:bold;
+    color:#444;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Liste des Commentaires</h1>
+
+    <div class="comment" th:each="comment : ${comments}">
+        <p th:text="${comment.text}"></p>
+
+        <p class="author">
+            Auteur :
+            <span th:text="${comment.author}"></span>
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>

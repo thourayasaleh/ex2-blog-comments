@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Articles</title>
+
+<style>
+body{
+    background:#f4f6f9;
+    font-family:Arial,sans-serif;
+    padding:30px;
+}
+
+.container{
+    width:80%;
+    margin:auto;
+}
+
+h1{
+    text-align:center;
+    color:#0077cc;
+}
+
+.card{
+    background:white;
+    padding:15px;
+    margin-top:15px;
+    border-left:5px solid #0077cc;
+    border-radius:8px;
+    box-shadow:0 0 10px gray;
+}
+
+.card h3{
+    color:#0077cc;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Liste des Articles</h1>
+
+    <div class="card" th:each="article : ${articles}">
+        <h3 th:text="${article.title}"></h3>
+        <p th:text="${article.content}"></p>
+    </div>
+
+</div>
+
+</body>
+</html>
